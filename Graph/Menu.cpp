@@ -71,19 +71,22 @@ void Menu::main(int a) {
 	case 1: // Graph ausgeben
 			// Aufgabe 1: hier ergänzen
 
+		system("cls");
+		graphs[a].print();
+		main(a);
 		break;
 	case 2: // Aufgabe 2: Graph dublizieren und ausgeben
 			// H = G;
 			// hier ergänzen: H ausgeben
+		system("cls");
+		copy(a);
 
 		break;
 	case 3: // Aufgabe 3: Verbindungen
-		int v; // Startknoten
-		cout << "    Start-Flughafen eingeben (Nr): ";
-		cin >> v;
 
 		// hier ergänzen
-
+		system("cls");
+		dikstrastart(a);
 		break;
 	case 4: // Aufgabe 4: Minimaler Spannbaum
 			// MST M(G);
@@ -96,4 +99,26 @@ void Menu::main(int a) {
 	default:
 		main(a);
 	}
+}
+
+void Menu::copy(int a) {
+	Graphen dummy = graphs[a];
+	dummy.setname(dummy.getname() + " KOPIE");
+	graphs.push_back(dummy);
+	main(graphs.size() - 1);
+}
+
+void Menu::dikstrastart(int a) {
+	graphs[a].print();
+	int ini = -1;
+	cout << "Von welchem Knoten möchten Sie starten?  ";
+	cin >> ini;
+	if (ini < graphs[a].getsize()) {
+		graphs[a].dick(ini);
+	}
+	else {
+		cout << "Ungültiger Knoten!" << endl << endl;
+		main(a);
+	}
+
 }

@@ -18,6 +18,14 @@ public:
 		return name;
 	}
 	bool isarc(int a, int b);
+	int getarc(int a, int b) {
+		return arcs[a][b];
+	}
+	void print();
+	int getsize() {
+		return nodes.size();
+	}
+	void dick(int start);
 private:
 	vector<Node> nodes;
 	vector<vector<int>> arcs;

@@ -14,6 +14,8 @@ public:
 	virtual ~Menu();
 	void initiate();
 	void main(int a);
+	void copy(int a);
+	void dikstrastart(int a);
 private:
 	vector<Graphen> graphs;
 };

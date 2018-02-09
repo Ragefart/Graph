@@ -44,3 +44,21 @@ bool Graphen::isarc(int a, int b) {
 		return false;
 	}
 }
+
+void Graphen::print() {
+	if (nodes.size() > 0) {
+		cout << "Der Graph " << name << " besteht aus:" << endl;
+		for (int i = 0; i < nodes.size(); i++) {
+			cout << nodes[i].getnumber() << " " << nodes[i].getname() << endl;
+		}
+	}
+	else{
+		cout << "Der Graph " << name << " ist leer." << endl;
+	}
+	
+}
+
+void Graphen::dick(int a) {
+	//Startet von Knoten nodes[a]
+
+}
